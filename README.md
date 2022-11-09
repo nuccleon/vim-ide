@@ -2,7 +2,7 @@
 
 ## Install vim-ide
 ```bash
-git clone --recurse-submodules https://github.com/beckenc/vim-ide.git
+git clone https://github.com/beckenc/vim-ide.git
 ```
 
 ### .. for current user
