@@ -83,9 +83,18 @@ for USER in $USERS; do
   user_home=$(eval echo "~$USER")
   user_vimrc="${user_home}/.vimrc"
 
-  echo "$VIMRC" > "$user_vimrc" && chown "$USER"."$USER" "$user_vimrc" || exit 1
+  echo "$VIMRC" > "$user_vimrc" && chown "$USER" "$user_vimrc" || exit 1
   echo "Installed the vim-ide configuration for user '$USER' successfully! Enjoy :-)"
 done
+
+echo "Install minpac .."
+  MINPAC_DIR="./pack/minpac/opt/minpac"
+  if [ -d "$MINPAC_DIR" ]; then
+    cd "$MINPAC_DIR" || exit 1
+    git pull || exit 1
+  else
+    git clone "https://github.com/k-takata/minpac.git" "$MINPAC_DIR" || exit 1
+  fi
 
 echo "Update plugins .."
 vim -N -u "$DIR"/vimrc/plugins.vim -c "set packpath^=$DIR" -c "PackInstall"
