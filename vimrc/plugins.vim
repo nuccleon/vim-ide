@@ -73,7 +73,7 @@ command! PackInstall call PackInit(4) | call minpac#update('', {'do': 'quit'})
 " =============================================================================
 
 let NERDChristmasTree = 1
-let NERDTreeShowHidden = 0
+let NERDTreeShowHidden = 1
 
 " =============================================================================
 " Section: scrooloose/syntastic
@@ -91,6 +91,21 @@ let g:syntastic_check_on_wq = 0
 " =============================================================================
 " Section: junegunn/fzf
 " =============================================================================
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+" - down / up / left / right
+let g:fzf_layout = { 'down': '20%' }
+
+" Enable per-command history
+" - History files will be stored in the specified directory
+" - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
+"   'previous-history' instead of 'down' and 'up'.
+let g:fzf_history_dir = '~/.vim/fzf-history'
 
 " =============================================================================
 " Section: majutsushi/tagbar

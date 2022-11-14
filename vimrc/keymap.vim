@@ -72,9 +72,7 @@ nnoremap tp :tabp<CR>
 nnoremap tm :tabm<CR>
 nnoremap tt :tabnew<CR>
 nnoremap to :tabonly!<CR>
-
-nnoremap <C-t> :tabnew<CR>
-nnoremap <C-w> :confirm bdelete<CR>:tabclose<CR>gT
+nnoremap tc :tabclose<CR>
 
 " Open tag under cursor in new tab
 "noremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -99,16 +97,14 @@ nnoremap <Leader>c :confirm bdelete<CR>:tabclose<CR>gT
 " =============================================================================
 " Section: Window navigation
 " =============================================================================
-
-" Select window with Alt- Up/Down/Left/Right
-nnoremap <silent> <A-Up> :wincmd k<CR>
-inoremap <silent> <A-Up> <ESC> :wincmd k<CR>i
-nnoremap <silent> <A-Down> :wincmd j<CR>
-inoremap <silent> <A-Down> <ESC> :wincmd j<CR>i
-nnoremap <silent> <A-Left> :wincmd h<CR>
-inoremap <silent> <A-Left> <ESC> :wincmd h<CR>i
-nnoremap <silent> <A-Right> :wincmd l<CR>
-inoremap <silent> <A-Right> <ESC> :wincmd l<CR>i
+nnoremap <Leader>k :wincmd k<CR>
+inoremap <Leader>k <ESC> :wincmd k<CR>i
+nnoremap <Leader>j :wincmd j<CR>
+inoremap <Leader>j <ESC> :wincmd j<CR>i
+nnoremap <Leader>h :wincmd h<CR>
+inoremap <Leader>h <ESC> :wincmd h<CR>i
+nnoremap <Leader>l :wincmd l<CR>
+inoremap <Leader>l <ESC> :wincmd l<CR>i
 
 " Split window with Leader - and |
 noremap <silent> <Leader>- :split<CR>
@@ -129,9 +125,9 @@ nnoremap <Leader>gt :YcmCompleter GetType<CR>
 nnoremap <Leader>gd :YcmCompleter GetDoc<CR>
 
 " Look for files under current directory
-nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-t> :FZF<CR>
 " prevent opening FZF search result in NERD Tree
-nnoremap <silent> <expr> <C-p> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : "").":FZF\<CR>"
+nnoremap <silent> <expr> <C-t> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : "").":FZF\<CR>"
 
 " =============================================================================
 " Section: Formatting
@@ -156,7 +152,7 @@ vnoremap <S-Tab> <
 nnoremap <silent> <Leader>tws :call TrimWhiteSpace()<CR>
 
 " Search and replace selection on Ctrl+r
-vnoremap <C-r> "hy:%s/<C-r>h//gc<Left><Left><Left>
+vnoremap <C-ä> "hy:%s/<C-r>h//gc<Left><Left><Left>
 
 " Move Lines / Selections
 nnoremap <C-Down> :m .+1<CR>==
