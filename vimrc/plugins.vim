@@ -119,8 +119,8 @@ let g:fzf_history_dir = '~/.vim/fzf-history'
 " =============================================================================
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
-let g:ycm_max_num_candidates = 10
-let g:ycm_max_num_identifiers_candidates = 10
+"let g:ycm_max_num_candidates = 10
+"let g:ycm_max_num_identifiers_candidates = 10
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " want to just turn off the identifier completer but keep the semantic trigger (. or ->) active

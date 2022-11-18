@@ -173,6 +173,9 @@ set display=lastline
 " Turn on listing non-text chars
 set list listchars=tab:»·,trail:·,eol:$
 
+" splitting a window will put the new window below the current one
+set splitbelow
+
 " Max Line-Width Highlighting (Vim >= 7.3)
 if version >= 703
   set colorcolumn=120
