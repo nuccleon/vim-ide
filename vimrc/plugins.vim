@@ -117,6 +117,7 @@ let g:fzf_history_dir = '~/.vim/fzf-history'
 " =============================================================================
 " Section: ycm-core/YouCompleteMe
 " =============================================================================
+"let g:ycm_log_level = 'debug'
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 "let g:ycm_max_num_candidates = 10
