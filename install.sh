@@ -83,7 +83,7 @@ for USER in $USERS; do
   user_home=$(eval echo "~$USER")
   user_vimrc="${user_home}/.vimrc"
 
-  echo "$VIMRC" > "$user_vimrc" && chown "$USER" "$user_vimrc" || exit 1
+  echo "$VIMRC" > "$user_vimrc" && chown "$USER:$USER" "$user_vimrc" || exit 1
   echo "Installed the vim-ide configuration for user '$USER' successfully! Enjoy :-)"
 done
 
