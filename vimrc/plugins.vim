@@ -42,7 +42,7 @@ function! PackInit(verbose_level) abort
     call minpac#add('majutsushi/tagbar')
     " A code-completion engine for Vim
     if has('python3')
-      call minpac#add('ycm-core/YouCompleteMe',{'do': {-> system('./install.py --clangd-completer')}})
+      call minpac#add('ycm-core/YouCompleteMe',{'do': {-> system('./install.py --clangd-completer --force-sudo')}})
     else
       echomsg "YouCompleteMe needs vim compiled with python support"
     endif
